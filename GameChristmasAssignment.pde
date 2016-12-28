@@ -29,7 +29,8 @@ void setup()
 {
   size(600,800);
   
-  StarWars = createFont("Title.otf", 64);
+  Bounce = createFont("Title.otf", 64);
+  font = createFont("batman.ttf", 32);
 }
 
 //Variables
@@ -41,7 +42,8 @@ final int EndScreen = 2;
 int GameState = WelcomeScreen;
 
 //Text Fonts
-PFont StarWars;
+PFont Bounce;
+PFont font;
 
 //Variables for background Circles
 int Xpos;
@@ -68,16 +70,30 @@ void draw()
 void HomeScreenDisplay()
 {
   background(1,12,18);
+  
+  //Bounce Title
   fill(19, 161, 229);
   textSize(64);
-  textFont(StarWars);
-  text("Bounce", width/4, height/5);
+  textFont(Bounce);
+  text("Bounce", width/4 + 5, height/5);
+  
+  //Start Button
+  //Initialise Button Call
+  Button initialise = new Button("Start", width/2 - 70, height/2 - 7,width/2 - 70,height/2 - 36,130, 34,color(1,12,18), false, WelcomeScreen, GameScreen);
+          
+  //Initialise Button Start Screen
+  initialise.update();
+  initialise.fillRect();
+  initialise.overRect(mouseX,mouseY,width/2 - 8, 34);
+  initialise.mouseclick();
+  
+  //Background Detail
   BackgroundCircles();
 }
 
 void GameDisplay()
 {
-  
+  background(0);
 }
 
 void EndDisplay()
