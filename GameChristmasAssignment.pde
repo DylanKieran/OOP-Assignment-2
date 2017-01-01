@@ -93,7 +93,12 @@ void HomeScreenDisplay()
 
 void GameDisplay()
 {
-  background(0);
+  background(1,12,18);
+  BackgroundCircles();
+  
+  Player BouncePlayer = new Player(50, 255, height - 80, mouseX);
+  BouncePlayer.drawPlayer();
+  
 }
 
 void EndDisplay()
