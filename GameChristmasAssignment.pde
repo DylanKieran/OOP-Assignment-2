@@ -49,6 +49,9 @@ PFont font;
 int Xpos;
 int Ypos;
 
+//Declare Ball Class
+Ball BounceBall = new Ball(250, 350, 3, -3);
+
 void draw()
 {
   switch(GameState)
@@ -99,7 +102,6 @@ void GameDisplay()
   Player BouncePlayer = new Player(40, 255, height-80, mouseX); //Player(BarSize, Color, Y, X)
   BouncePlayer.drawPlayer();
   
-  Ball BounceBall = new Ball(250, 350, 3, -3);
   BounceBall.drawBall();
   BounceBall.update();
   

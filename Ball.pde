@@ -16,7 +16,7 @@ class Ball
   void drawBall()
   {
     fill(255);
-    ellipse(Xpos, Ypos, 10, 10);
+    ellipse(Xpos, Ypos, 5, 5);
   }
   
   void update()
