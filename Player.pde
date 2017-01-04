@@ -2,10 +2,10 @@ class Player
 {
   float BarSize;
   color BarColour;
-  int YPosition;
+  float YPosition;
   float XPosition;
   
-  Player(float BarSize, color BarColour, int YPosition, float XPosition)
+  Player(float BarSize, color BarColour, float YPosition, float XPosition)
   {
     this.BarSize = BarSize;
     this.BarColour = BarColour;

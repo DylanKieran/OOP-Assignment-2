@@ -27,7 +27,7 @@ Highscore loads in from a file
 
 void setup()
 {
-  size(600,800);
+  size(500,700);
   
   Bounce = createFont("Title.otf", 64);
   font = createFont("batman.ttf", 32);
@@ -75,7 +75,7 @@ void HomeScreenDisplay()
   fill(19, 161, 229);
   textSize(64);
   textFont(Bounce);
-  text("Bounce", width/4 + 5, height/5);
+  text("Bounce", width/4 - 20, height/5);
   
   //Start Button
   //Initialise Button Call
@@ -96,8 +96,12 @@ void GameDisplay()
   background(1,12,18);
   BackgroundCircles();
   
-  Player BouncePlayer = new Player(50, 255, height - 80, mouseX);
+  Player BouncePlayer = new Player(40, 255, height-80, mouseX); //Player(BarSize, Color, Y, X)
   BouncePlayer.drawPlayer();
+  
+  Ball BounceBall = new Ball(250, 350, 3, -3);
+  BounceBall.drawBall();
+  BounceBall.update();
   
 }
 
