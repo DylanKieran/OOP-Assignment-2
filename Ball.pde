@@ -4,6 +4,9 @@ class Ball
   float Ypos;
   float XSpeed;
   float YSpeed;
+  float PlayerHalf;
+  float PlayerXPos;
+  float PlayerYPos;
   
   Ball(float Xpos, float Ypos, float XSpeed, float YSpeed)
   {
@@ -19,8 +22,9 @@ class Ball
     ellipse(Xpos, Ypos, 5, 5);
   }
   
-  void update()
+  void update(float PlayerHalf, float PlayerXPos, float PlayerYPos)
   {
+    
     Xpos = Xpos + XSpeed;
     Ypos = Ypos + YSpeed;
     
@@ -33,5 +37,11 @@ class Ball
     {
       YSpeed = -YSpeed;
     }
+    
+    if((PlayerXPos - PlayerHalf) < Xpos && (PlayerXPos + PlayerHalf) > Xpos && (PlayerYPos - 5) < Ypos && (PlayerYPos) > Ypos)
+    {
+      YSpeed = - YSpeed;
+    }
+    
   }
 }

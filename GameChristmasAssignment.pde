@@ -103,7 +103,7 @@ void GameDisplay()
   BouncePlayer.drawPlayer();
   
   BounceBall.drawBall();
-  BounceBall.update();
+  BounceBall.update(45,mouseX,height-80); //Pass Player Co-ordinates to Ball
   
 }
 
