@@ -28,12 +28,12 @@ class Ball
     Xpos = Xpos + XSpeed;
     Ypos = Ypos + YSpeed;
     
-    if(Xpos > width || Xpos<0)
+    if(Xpos > width || Xpos < 0)
     {
       XSpeed = -XSpeed;
     }
     
-    if(Ypos<0)
+    if(Ypos < 0)
     {
       YSpeed = -YSpeed;
     }
@@ -41,6 +41,11 @@ class Ball
     if((PlayerXPos - PlayerHalf) < Xpos && (PlayerXPos + PlayerHalf) > Xpos && (PlayerYPos - 5) < Ypos && (PlayerYPos) > Ypos)
     {
       YSpeed = - YSpeed;
+    }
+    
+    if(Ypos > height)
+    {
+      GameState = EndScreen;
     }
     
   }

@@ -109,7 +109,13 @@ void GameDisplay()
 
 void EndDisplay()
 {
+  //Background Detail
+  background(1,12,18);
+  BackgroundCircles();
   
+  fill(19, 161, 229);
+  textFont(Bounce, 52);
+  text("Game Over", width/4 - 45, height/5);
 }
 
 void BackgroundCircles()
