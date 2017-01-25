@@ -13,7 +13,7 @@ class Player
     this.XPosition = XPosition;
   }
   
-  void drawPlayer()
+  void update()
   {
     strokeWeight(5);
     stroke(BarColour);

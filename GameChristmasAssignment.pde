@@ -100,7 +100,7 @@ void GameDisplay()
   BackgroundCircles();
   
   Player BouncePlayer = new Player(40, 255, height-80, mouseX); //Player(BarSize, Color, Y, X)
-  BouncePlayer.drawPlayer();
+  BouncePlayer.update();
   
   BounceBall.drawBall();
   BounceBall.update(45,mouseX,height-80); //Pass Player Co-ordinates to Ball
