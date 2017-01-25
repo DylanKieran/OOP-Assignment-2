@@ -41,6 +41,17 @@ final int GameScreen = 1;
 final int EndScreen = 2;
 int GameState = WelcomeScreen;
 
+//Level Variables
+final int Level1 = 1;
+final int Level2 = 2;
+final int Level3 = 3;
+final int Level4 = 4;
+final int Level5 = 5;
+final int Level6 = 6;
+final int Level7 = 7;
+final int Level8 = 8;
+int Level = Level1;
+
 //Text Fonts
 PFont Bounce;
 PFont font;
@@ -61,7 +72,7 @@ void draw()
       break;
     
     case GameScreen:
-      GameDisplay();
+      LevelSwitch();
       break;
       
     case EndScreen:
@@ -94,7 +105,7 @@ void HomeScreenDisplay()
   BackgroundCircles();
 }
 
-void GameDisplay()
+void StartGame()
 {
   background(1,12,18);
   BackgroundCircles();
@@ -128,5 +139,43 @@ void BackgroundCircles()
     {
       ellipse(Xpos, Ypos, 1 , 1);
     }
+  }
+}
+
+void LevelSwitch()
+{
+  switch(Level)
+  {
+    case Level1:
+      StartGame();
+      break;
+      
+    case Level2:
+      StartGame();
+      break;
+      
+    case Level3:
+      StartGame();
+      break;
+      
+    case Level4:
+      StartGame();
+      break;
+      
+    case Level5:
+      StartGame();
+      break;
+      
+    case Level6:
+      StartGame();
+      break;
+      
+    case Level7:
+      StartGame();
+      break;
+      
+    case Level8:
+      StartGame();
+      break;
   }
 }

@@ -5,6 +5,8 @@ abstract class GameObject
   float Ypos;
   float BlockWidth;
   float BlockHeight;
+  int Lives;
+  color BlockColour;
   
   abstract void update();
 }

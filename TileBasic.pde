@@ -5,6 +5,8 @@ class TileBasic extends GameObject
   float Ypos;
   float BlockWidth;
   float BlockHeight;
+  int Lives;
+  color BlockColour;
   
   TileBasic(float Xpos, float Ypos, float BlockWidth, float BlockHeight)
   {
@@ -19,7 +21,6 @@ class TileBasic extends GameObject
   {
     fill(255);
     rect(Xpos, Ypos, BlockWidth, BlockHeight);
-    
   }
   
 }
