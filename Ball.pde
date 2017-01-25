@@ -1,4 +1,4 @@
-class Ball
+class Ball 
 {
   float Xpos;
   float Ypos;
