@@ -142,12 +142,26 @@ void BackgroundCircles()
   }
 }
 
+void BasicTiles()
+{
+  //Declare Tiles
+  TileBasic TileBasic1 = new TileBasic(20, 20, 20, 20);
+  
+  TileBasic1 = new ArrayList<TileBasic>();
+  
+  for(int i = TileBasic1.size() - 1; i >= 0; i--)
+  {
+    
+  }
+}
+
 void LevelSwitch()
 {
   switch(Level)
   {
     case Level1:
       StartGame();
+      
       break;
       
     case Level2:
