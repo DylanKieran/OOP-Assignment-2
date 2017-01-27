@@ -31,6 +31,13 @@ void setup()
   
   Bounce = createFont("Title.otf", 64);
   font = createFont("batman.ttf", 32);
+  
+  //Create an empty ArrayList (to store basic tile objects)
+  BasicTile = new ArrayList<TileBasic>();
+  
+  //Create a new basic tile
+  BasicTile.add(new TileBasic(20, 20, 20, 20));
+  
 }
 
 //Variables
@@ -62,6 +69,12 @@ int Ypos;
 
 //Declare Ball Class
 Ball BounceBall = new Ball(250, 350, 3, -3);
+
+//Tile Arrary
+ArrayList<TileBasic> BasicTile;
+
+//Create a new basic tile
+//TileBasic EasyTiles = new TileBasic(20, 20, 20, 20);
 
 void draw()
 {
@@ -144,14 +157,12 @@ void BackgroundCircles()
 
 void BasicTiles()
 {
-  //Declare Tiles
-  TileBasic TileBasic1 = new TileBasic(20, 20, 20, 20);
-  
-  TileBasic1 = new ArrayList<TileBasic>();
-  
-  for(int i = TileBasic1.size() - 1; i >= 0; i--)
+  for(int i = BasicTile.size() - 1; i >0; i--)
   {
-    
+    TileBasic Tile = BasicTile.get(i);
+    Tile.update();
+    Tile.TileRemove();
+    Tile.TileHit();
   }
 }
 
@@ -161,7 +172,7 @@ void LevelSwitch()
   {
     case Level1:
       StartGame();
-      
+      BasicTiles();
       break;
       
     case Level2:
