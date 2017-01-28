@@ -25,14 +25,6 @@ Highscore loads in from a file
 
 */
 
-void setup()
-{
-  size(500,700);
-  
-  Bounce = createFont("Title.otf", 64);
-  font = createFont("batman.ttf", 32);
-}
-
 //Variables
 
 //Game State Variables
@@ -40,17 +32,6 @@ final int WelcomeScreen = 0; //final means that this value cannot be changed
 final int GameScreen = 1;
 final int EndScreen = 2;
 int GameState = WelcomeScreen;
-
-//Level Variables
-final int Level1 = 1;
-final int Level2 = 2;
-final int Level3 = 3;
-final int Level4 = 4;
-final int Level5 = 5;
-final int Level6 = 6;
-final int Level7 = 7;
-final int Level8 = 8;
-int Level = Level1;
 
 //Text Fonts
 PFont Bounce;
@@ -63,14 +44,18 @@ int Ypos;
 //Declare Ball Class
 Ball BounceBall = new Ball(250, 350, 3, -3);
 
-//Array List for GameObjecs
-ArrayList<GameObject> gameObjects = new ArrayList<GameObject>();
+//Array List for Tile
+ArrayList<Tile> Tiles = new ArrayList<Tile>();
 
-//Level 1 Tiles
-int rows = 6;
-int columns = 3;
-int total = rows*columns;
-TileBasic[][] Level1Tiles = new TileBasic[rows][columns];
+
+void setup()
+{
+  size(500,700);
+  
+  Bounce = createFont("Title.otf", 64);
+  font = createFont("batman.ttf", 32);
+  
+}//end setup()
 
 void draw()
 {
@@ -81,14 +66,15 @@ void draw()
       break;
     
     case GameScreen:
-      LevelSwitch();
+      StartGame();
       break;
       
     case EndScreen:
-      EndDisplay();
+      GameOver();
       break;
-  }
-}
+      
+  }//end switch
+}//end draw()
 
 void HomeScreenDisplay()
 {
@@ -112,10 +98,12 @@ void HomeScreenDisplay()
   
   //Background Detail
   BackgroundCircles();
-}
+  
+}//end HomeScreenDisplay()
 
 void StartGame()
 {
+  
   background(1,12,18);
   BackgroundCircles();
   
@@ -125,9 +113,9 @@ void StartGame()
   BounceBall.drawBall();
   BounceBall.update(45,mouseX,height-80); //Pass Player Co-ordinates to Ball
   
-}
+}//end StartGame()
 
-void EndDisplay()
+void GameOver()
 {
   //Background Detail
   background(1,12,18);
@@ -136,7 +124,8 @@ void EndDisplay()
   fill(19, 161, 229);
   textFont(Bounce, 52);
   text("Game Over", width/4 - 45, height/5);
-}
+  
+}//end GameOver()
 
 void BackgroundCircles()
 {
@@ -147,9 +136,12 @@ void BackgroundCircles()
     for(Ypos = 5; Ypos < height; Ypos += 40)
     {
       ellipse(Xpos, Ypos, 1 , 1);
-    }
-  }
-}
+      
+    }//end Ypos
+    
+  }//end Xpos
+  
+}//end BackgroundCircles()
 
 /*void BasicTiles()
 {
@@ -168,64 +160,6 @@ void BackgroundCircles()
   }
 }
 */
-void Level1()
-{
-  //Adding Bricks to the array
-  for(int i = 0; i < rows; i++)
-  {
-    for(int j = 0; j < columns; j ++)
-    {
-      Level1Tiles[i][j] = new TileBasic((i+1) *width/(rows + 2), (j+1) * 50, 255, 1);
-    }
-  }
-  
-  //Draw Bricks from the Array
-  for (int i = 0; i< rows; i++)
-  {
-    for(int j =0; j< columns; j++)
-    {
-      Level1Tiles[i][j].update();
-    }
-  }
-  
-  
-}
 
-void LevelSwitch()
-{
-  switch(Level)
-  {
-    case Level1:
-      StartGame();
-      Level1();
-      break;
-      
-    case Level2:
-      StartGame();
-      break;
-      
-    case Level3:
-      StartGame();
-      break;
-      
-    case Level4:
-      StartGame();
-      break;
-      
-    case Level5:
-      StartGame();
-      break;
-      
-    case Level6:
-      StartGame();
-      break;
-      
-    case Level7:
-      StartGame();
-      break;
-      
-    case Level8:
-      StartGame();
-      break;
-  }
-}
+
+//Levels
