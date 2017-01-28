@@ -151,23 +151,11 @@ void BackgroundCircles()
   }
 }
 
-/*void BasicTiles()
+void BasicTiles()
 {
-  for (int i = gameObjects.size() -1 ; i >= 0  ; i --)
-  {
-    GameObject go = gameObjects.get(i); 
-    if(IsTileHit && Lives != 0)
-    {
-      go.update();
-    }
-    else
-    {
-      Lives = go.TileRemove(); 
-    }
-    IsTileHit = go.TileHit();
-  }
+  
 }
-*/
+
 void Level1()
 {
   //Adding Bricks to the array

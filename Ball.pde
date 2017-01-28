@@ -38,6 +38,7 @@ class Ball
       YSpeed = -YSpeed;
     }
     
+    //Ball and Player interaction
     if((PlayerXPos - PlayerHalf) < Xpos && (PlayerXPos + PlayerHalf) > Xpos && (PlayerYPos - 5) < Ypos && (PlayerYPos) > Ypos)
     {
       YSpeed = - YSpeed;
@@ -47,6 +48,12 @@ class Ball
     {
       GameState = EndScreen;
     }
+    
+  }
+  
+  //Ball and Tiles interaction
+  void BallHit()
+  {
     
   }
 }
