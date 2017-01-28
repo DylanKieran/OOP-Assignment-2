@@ -23,15 +23,16 @@ class TileBasic extends GameObject
     rect(Xpos, Ypos, BlockWidth, BlockHeight);
   }
   
-  void TileRemove()
+  int TileRemove()
   {
     if(TileHit())
     {
       Lives --;
+      return Lives;
     }
     else
     {
-      
+      return Lives;
     }
   }
   

@@ -10,6 +10,6 @@ abstract class GameObject
   boolean Hit;
   
   abstract void update();
-  abstract void TileRemove();
+  abstract int TileRemove();
   abstract boolean TileHit();
 }
