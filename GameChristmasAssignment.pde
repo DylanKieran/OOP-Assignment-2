@@ -149,7 +149,7 @@ void StartGame()
   for(int i = 0; i< Tiles.size(); i++)
   {
     Tiles.get(i).create();
-    Tiles.get(i).CheckHit(i,BounceBall.Xpos, BounceBall.Ypos, BounceBall.XSpeed, BounceBall.YSpeed);
+    Tiles.get(i).CheckHit(i);
     Tiles.get(i).TileHit(i);
   }
   
