@@ -1,43 +1,39 @@
 class TileBasic extends GameObject
 {
-  //Variables
+   //Variables
   float Xpos;
   float Ypos;
   float BlockWidth;
   float BlockHeight;
   int Lives;
   color BlockColour;
+  boolean Hit; //If the Block has been hit or not
   
-  TileBasic(float Xpos, float Ypos, float BlockWidth, float BlockHeight)
+  TileBasic(float Xpos, float Ypos, color BlockColour, int Lives)
   {
     this.Xpos = Xpos;
     this.Ypos = Ypos;
-    this.BlockWidth = BlockWidth;
-    this.BlockHeight = BlockHeight;
+    this.BlockColour = BlockColour;
+    this.Lives = Lives;
+    
+    this.BlockWidth = 50;
+    this.BlockHeight = 10;
+    
+    this.Hit = false;
   }
   
-  //Functions
   void update()
   {
-    fill(255);
+    noStroke();
+    fill(BlockColour);
     rect(Xpos, Ypos, BlockWidth, BlockHeight);
   }
-  
-  int TileRemove()
+
+  void TileHit()
   {
-    if(TileHit())
-    {
-      Lives --;
-      return Lives;
-    }
-    else
-    {
-      return Lives;
-    }
+    Hit = true;
+    
+    Lives--;
   }
   
-  boolean TileHit()
-  {
-    return true;
-  }
 }

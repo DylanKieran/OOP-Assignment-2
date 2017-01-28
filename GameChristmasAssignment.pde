@@ -66,9 +66,11 @@ Ball BounceBall = new Ball(250, 350, 3, -3);
 //Array List for GameObjecs
 ArrayList<GameObject> gameObjects = new ArrayList<GameObject>();
 
-//Variables for tiles
-boolean IsTileHit;
-int Lives;
+//Level 1 Tiles
+int rows = 6;
+int columns = 3;
+int total = rows*columns;
+TileBasic[][] Level1Tiles = new TileBasic[rows][columns];
 
 void draw()
 {
@@ -165,17 +167,29 @@ void BackgroundCircles()
     IsTileHit = go.TileHit();
   }
 }
-
+*/
 void Level1()
 {
-  for(float Y = 0.58; Y < 6; Y++)
+  //Adding Bricks to the array
+  for(int i = 0; i < rows; i++)
   {
-    for(float X = 0.58; X < 9; X ++)
+    for(int j = 0; j < columns; j ++)
     {
-      gameObjects.add(new TileBasic(X * 50, Y * 0, 40, 5));
+      Level1Tiles[i][j] = new TileBasic((i+1) *width/(rows + 2), (j+1) * 50, 255, 1);
     }
   }
-}*/
+  
+  //Draw Bricks from the Array
+  for (int i = 0; i< rows; i++)
+  {
+    for(int j =0; j< columns; j++)
+    {
+      Level1Tiles[i][j].update();
+    }
+  }
+  
+  
+}
 
 void LevelSwitch()
 {
@@ -183,8 +197,7 @@ void LevelSwitch()
   {
     case Level1:
       StartGame();
-      //BasicTiles();
-      //Level1();
+      Level1();
       break;
       
     case Level2:

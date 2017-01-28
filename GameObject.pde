@@ -7,9 +7,8 @@ abstract class GameObject
   float BlockHeight;
   int Lives;
   color BlockColour;
-  boolean Hit;
+  boolean Hit; //If the Block has been hit or not
   
   abstract void update();
-  abstract int TileRemove();
-  abstract boolean TileHit();
+  abstract void TileHit();
 }
