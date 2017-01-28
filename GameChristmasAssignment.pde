@@ -55,6 +55,35 @@ void setup()
   Bounce = createFont("Title.otf", 64);
   font = createFont("batman.ttf", 32);
   
+  //Variables for Creating different Tiles
+  Tile temp;
+  //Create a different tile if the RandomTile variable is between a certain number
+  int RandomTile = (int)(random(0, 80));
+  
+  //Loop through columns
+  for(int i=0; i<8; i++)
+  {
+    //Loop through rows
+    for(int j=0; j<8; j++)
+    {
+      if(RandomTile <= 45)
+      {
+        temp = new TileEasy((i+1) *width/(10), (j+1) * 45);
+        Tiles.add(temp);
+      }//end else if
+      else if(RandomTile > 45 && RandomTile <= 70)
+      {
+        temp = new TileNormal((i+1) *width/(10), (j+1) * 45);
+        Tiles.add(temp);
+      }//end else if
+      else if(RandomTile > 70 && RandomTile <= 80)
+      {
+        temp = new TileHard((i+1) *width/(10), (j+1) * 45);
+        Tiles.add(temp);
+      }//end else if
+    }//end for
+  }//end for
+  
 }//end setup()
 
 void draw()
@@ -112,6 +141,11 @@ void StartGame()
   
   BounceBall.drawBall();
   BounceBall.update(45,mouseX,height-80); //Pass Player Co-ordinates to Ball
+  
+  for(int i = 0; i< Tiles.size(); i++)
+  {
+    Tiles.get(i).create();
+  }
   
 }//end StartGame()
 
