@@ -57,8 +57,6 @@ void setup()
   
   //Variables for Creating different Tiles
   Tile temp;
-  //Create a different tile if the RandomTile variable is between a certain number
-  int RandomTile = (int)(random(0, 80));
   
   //Loop through columns
   for(int i=0; i<8; i++)
@@ -66,20 +64,26 @@ void setup()
     //Loop through rows
     for(int j=0; j<8; j++)
     {
+      //Create a different tile (every iteration of the loop) if the RandomTile variable is between a certain number
+      int RandomTile = (int)(random(0, 80));
+      
       if(RandomTile <= 45)
       {
         temp = new TileEasy((i+1) *width/(10), (j+1) * 45);
         Tiles.add(temp);
+        
       }//end else if
       else if(RandomTile > 45 && RandomTile <= 70)
       {
         temp = new TileNormal((i+1) *width/(10), (j+1) * 45);
         Tiles.add(temp);
+        
       }//end else if
       else if(RandomTile > 70 && RandomTile <= 80)
       {
         temp = new TileHard((i+1) *width/(10), (j+1) * 45);
         Tiles.add(temp);
+        
       }//end else if
     }//end for
   }//end for
@@ -145,6 +149,8 @@ void StartGame()
   for(int i = 0; i< Tiles.size(); i++)
   {
     Tiles.get(i).create();
+    Tiles.get(i).CheckHit(i,BounceBall.Xpos, BounceBall.Ypos, BounceBall.XSpeed, BounceBall.YSpeed);
+    Tiles.get(i).TileHit(i);
   }
   
 }//end StartGame()

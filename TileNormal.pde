@@ -9,5 +9,6 @@ class TileNormal extends Tile
     this.TileHeight = 8;
     this.TileColour = color(0,255,0);
     this.Lives = 2;
+    this.Hit = false;
   }
 }

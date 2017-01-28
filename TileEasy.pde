@@ -9,5 +9,7 @@ class TileEasy extends Tile
     this.TileHeight = 8;
     this.TileColour = color(255,0,0);
     this.Lives = 1;
+    this.Hit = false;
   }
+ 
 }

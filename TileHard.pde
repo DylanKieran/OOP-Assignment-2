@@ -9,5 +9,6 @@ class TileHard extends Tile
     this.TileHeight = 8;
     this.TileColour = color(0,0,255);
     this.Lives = 3;
+    this.Hit = false;
   }
 }
