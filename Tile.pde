@@ -73,7 +73,7 @@ class Tile
    
   }
   
-    void TileHit(int i)
+  void TileHit(int i)
   {
     if(Tiles.get(i).Hit == true)
     {
