@@ -55,45 +55,18 @@ final int Level4 = 4;
 final int Level5 = 5;
 int LevelState = Level1;
 
+//Variables for Creating different Tiles
+Tile temp;
+int i = 0;
+int j = 0;
+int RandomTile;
+
 void setup()
 {
   size(500,700);
   
   Bounce = createFont("Title.otf", 64);
   font = createFont("batman.ttf", 32);
-  
-  //Variables for Creating different Tiles
-  Tile temp;
-  
-  //Loop through columns
-  for(int i=0; i<8; i++)
-  {
-    //Loop through rows
-    for(int j=0; j<8; j++)
-    {
-      //Create a different tile (every iteration of the loop) if the RandomTile variable is between a certain number
-      int RandomTile = (int)(random(0, 80));
-      
-      if(RandomTile <= 45)
-      {
-        temp = new TileEasy((i+1) *width/(10), (j+1) * 45);
-        Tiles.add(temp);
-        
-      }//end else if
-      else if(RandomTile > 45 && RandomTile <= 70)
-      {
-        temp = new TileNormal((i+1) *width/(10), (j+1) * 45);
-        Tiles.add(temp);
-        
-      }//end else if
-      else if(RandomTile > 70 && RandomTile <= 80)
-      {
-        temp = new TileHard((i+1) *width/(10), (j+1) * 45);
-        Tiles.add(temp);
-        
-      }//end else if
-    }//end for
-  }//end for
   
 }//end setup()
 
@@ -106,7 +79,6 @@ void draw()
       break;
     
     case GameScreen:
-      StartGame();
       switchLevels();
       break;
       
@@ -151,8 +123,11 @@ void StartGame()
   Player BouncePlayer = new Player(40, 255, height-80, mouseX); //Player(BarSize, Color, Y, X)
   BouncePlayer.update();
   
-  BounceBall.drawBall();
-  BounceBall.update(45,mouseX,height-80); //Pass Player Co-ordinates to Ball
+  if(frameCount > 140)
+  {
+    BounceBall.drawBall();
+    BounceBall.update(45,mouseX,height-80); //Pass Player Co-ordinates to Ball
+  }
   
   for(int i = 0; i< Tiles.size(); i++)
   {
@@ -196,28 +171,70 @@ void switchLevels()
   switch(LevelState)
   {
     case Level1:
+      StartGame();
       Level1();
       break;
       
     case Level2:
+      StartGame();
       Level2();
       break;
     
     case Level3:
+      StartGame();
       Level3();
       break;
       
     case Level4:
+      StartGame();
       Level4();
       break;
       
     case Level5:
+      StartGame();
       Level5();
       break;
   }
 }
 
-void Level1(){}
+void Level1()
+{
+  
+  if(i < 8)
+  {
+    //Loop through rows
+    if(j < 8)
+    {
+      //Create a different tile (every iteration of the loop) if the RandomTile variable is between a certain number
+      RandomTile = (int)(random(0, 80));
+      
+      if(RandomTile <= 45)
+      {
+        temp = new TileEasy((i+1) *width/(10), (j+1) * 45);
+        Tiles.add(temp);
+        
+      }//end else if
+      else if(RandomTile > 45 && RandomTile <= 70)
+      {
+        temp = new TileNormal((i+1) *width/(10), (j+1) * 45);
+        Tiles.add(temp);
+        
+      }//end else if
+      else if(RandomTile > 70 && RandomTile <= 80)
+      {
+        temp = new TileHard((i+1) *width/(10), (j+1) * 45);
+        Tiles.add(temp);
+        
+      }//end else if
+        j = j + 1;
+    }//end if
+    else if(j == 8)
+    {
+      i = i + 1;
+      j = 0;
+    }
+  }//end if
+}
 void Level2(){}
 void Level3(){}
 void Level4(){}
