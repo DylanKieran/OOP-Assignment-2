@@ -47,6 +47,13 @@ Ball BounceBall = new Ball(250, 350, 3, -3);
 //Array List for Tile
 ArrayList<Tile> Tiles = new ArrayList<Tile>();
 
+//Level Variables
+final int Level1 = 1;
+final int Level2 = 2;
+final int Level3 = 3;
+final int Level4 = 4;
+final int Level5 = 5;
+int LevelState = Level1;
 
 void setup()
 {
@@ -100,6 +107,7 @@ void draw()
     
     case GameScreen:
       StartGame();
+      switchLevels();
       break;
       
     case EndScreen:
@@ -183,23 +191,34 @@ void BackgroundCircles()
   
 }//end BackgroundCircles()
 
-/*void BasicTiles()
+void switchLevels()
 {
-  for (int i = gameObjects.size() -1 ; i >= 0  ; i --)
+  switch(LevelState)
   {
-    GameObject go = gameObjects.get(i); 
-    if(IsTileHit && Lives != 0)
-    {
-      go.update();
-    }
-    else
-    {
-      Lives = go.TileRemove(); 
-    }
-    IsTileHit = go.TileHit();
+    case Level1:
+      Level1();
+      break;
+      
+    case Level2:
+      Level2();
+      break;
+    
+    case Level3:
+      Level3();
+      break;
+      
+    case Level4:
+      Level4();
+      break;
+      
+    case Level5:
+      Level5();
+      break;
   }
 }
-*/
 
-
-//Levels
+void Level1(){}
+void Level2(){}
+void Level3(){}
+void Level4(){}
+void Level5(){}
