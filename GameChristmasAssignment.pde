@@ -42,7 +42,7 @@ int Xpos;
 int Ypos;
 
 //Declare Ball Class
-Ball BounceBall = new Ball(250, 350, 3, -3);
+Ball BounceBall = new Ball(250, 350, 4, -4);
 
 //Array List for Tile
 ArrayList<Tile> Tiles = new ArrayList<Tile>();
@@ -54,6 +54,10 @@ final int Level3 = 3;
 final int Level4 = 4;
 final int Level5 = 5;
 int LevelState = Level1;
+
+//Rows Cols
+int row = 0;
+int col = 0;
 
 //Variables for Creating different Tiles
 Tile temp;
@@ -200,38 +204,38 @@ void switchLevels()
 void Level1()
 {
   
-  if(i < 8)
-  {
+  if(row < 7)
+   {
     //Loop through rows
-    if(j < 8)
+    if(col < 5)
     {
       //Create a different tile (every iteration of the loop) if the RandomTile variable is between a certain number
       RandomTile = (int)(random(0, 80));
       
       if(RandomTile <= 45)
       {
-        temp = new TileEasy((i+1) *width/(10), (j+1) * 45);
+        temp = new TileEasy((row+1) *width/(7 + 2), (col+1) * 50);
         Tiles.add(temp);
         
       }//end else if
       else if(RandomTile > 45 && RandomTile <= 70)
       {
-        temp = new TileNormal((i+1) *width/(10), (j+1) * 45);
+        temp = new TileNormal((row+1) *width/(7 + 2), (col+1) * 50);
         Tiles.add(temp);
         
       }//end else if
       else if(RandomTile > 70 && RandomTile <= 80)
       {
-        temp = new TileHard((i+1) *width/(10), (j+1) * 45);
+        temp = new TileHard((row+1) *width/(7 + 2), (col+1) * 50);
         Tiles.add(temp);
         
       }//end else if
-        j = j + 1;
+       col = col + 1;
     }//end if
-    else if(j == 8)
+    else if(col == 5)
     {
-      i = i + 1;
-      j = 0;
+      row = row + 1;
+      col = 0;
     }
   }//end if
 }
