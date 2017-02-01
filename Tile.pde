@@ -77,7 +77,7 @@ class Tile
   {
     if(Tiles.get(i).Hit == true)
     {
-      this.Lives --;
+      Lives --;
     }
     
     if(Tiles.get(i).Lives == 0)

@@ -55,9 +55,7 @@ final int Level4 = 4;
 final int Level5 = 5;
 int LevelState = Level1;
 
-//Rows Cols
-int row = 0;
-int col = 0;
+boolean SetTiles = false;
 
 //Variables for Creating different Tiles
 Tile temp;
@@ -203,18 +201,19 @@ void switchLevels()
 
 void Level1()
 {
-  
-  if(row < 7)
+  if(SetTiles == false)
+  {
+   for(int row=0; row < 7; row++)
    {
     //Loop through rows
-    if(col < 5)
+    for(int col=0; col < 5; col++)
     {
       //Create a different tile (every iteration of the loop) if the RandomTile variable is between a certain number
       RandomTile = (int)(random(0, 80));
       
       if(RandomTile <= 45)
       {
-        temp = new TileEasy((row+1) *width/(7 + 2), (col+1) * 50);
+        temp = new TileEasy((row+1) *width/(7 + 2), (col+1) * 50);  
         Tiles.add(temp);
         
       }//end else if
@@ -228,16 +227,11 @@ void Level1()
       {
         temp = new TileHard((row+1) *width/(7 + 2), (col+1) * 50);
         Tiles.add(temp);
-        
       }//end else if
-       col = col + 1;
-    }//end if
-    else if(col == 5)
-    {
-      row = row + 1;
-      col = 0;
-    }
-  }//end if
+    }//end for
+  }//end for
+    SetTiles = true;
+  }
 }
 void Level2(){}
 void Level3(){}
