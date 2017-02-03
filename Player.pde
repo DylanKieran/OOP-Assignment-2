@@ -1,13 +1,15 @@
 class Player 
 {
-  float BarSize;
+  int BarWidth;
+  int BarHeight;
   color BarColour;
   float YPosition;
   float XPosition;
   
-  Player(float BarSize, color BarColour, float YPosition, float XPosition)
+  Player(int BarWidth, int BarHeight, color BarColour, float YPosition, float XPosition)
   {
-    this.BarSize = BarSize;
+    this.BarWidth = BarWidth;
+    this.BarHeight = BarHeight;
     this.BarColour = BarColour;
     this.YPosition = YPosition;
     this.XPosition = XPosition;
@@ -15,8 +17,8 @@ class Player
   
   void update()
   {
-    strokeWeight(5);
+    strokeWeight(2);
     stroke(BarColour);
-    line(XPosition-BarSize, YPosition, XPosition+BarSize, YPosition);
+    rect(XPosition-BarWidth, YPosition, BarWidth, BarHeight);
   }
 }

@@ -11,4 +11,12 @@ class TileNormal extends Tile
     this.Lives = 2;
     this.Hit = false;
   }
+  
+  void Update()
+  {
+    if(Lives <= 0)
+    {
+      Tiles.remove(this);   
+    }
+  }
 }

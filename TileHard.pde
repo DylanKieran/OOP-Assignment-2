@@ -11,4 +11,12 @@ class TileHard extends Tile
     this.Lives = 3;
     this.Hit = false;
   }
+  
+ void Update()
+  {
+    if(Lives <= 0)
+    {
+      Tiles.remove(this);   
+    }
+  }
 }

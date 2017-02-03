@@ -1,30 +1,3 @@
-/* 
------- BOUNCE -------
-
-For screens have a game state same for Levels ????? 
-
-Arkanoid
-
-Power ups
-
-Player class
-
-Tile Super class
-
-Tile sub classes different things they do different colours
-
-Rounds
-
-Score
-
-Game Overscreen
-
-Game start screen
-
-Highscore loads in from a file
-
-*/
-
 //Variables
 
 //Game State Variables
@@ -56,6 +29,7 @@ final int Level5 = 5;
 int LevelState = Level1;
 
 boolean SetTiles = false;
+boolean RemoveTile = false;
 
 //Variables for Creating different Tiles
 Tile temp;
@@ -66,6 +40,7 @@ int RandomTile;
 void setup()
 {
   size(500,700);
+  frameRate(60);
   
   Bounce = createFont("Title.otf", 64);
   font = createFont("batman.ttf", 32);
@@ -122,20 +97,20 @@ void StartGame()
   background(1,12,18);
   BackgroundCircles();
   
-  Player BouncePlayer = new Player(40, 255, height-80, mouseX); //Player(BarSize, Color, Y, X)
+  Player BouncePlayer = new Player(70, 5, 255, height-80, mouseX); //Player(BarSize, Color, Y, X)
   BouncePlayer.update();
   
   if(frameCount > 140)
   {
     BounceBall.drawBall();
-    BounceBall.update(45,mouseX,height-80); //Pass Player Co-ordinates to Ball
+    BounceBall.update(70,mouseX,height-80); //Pass Player Co-ordinates to Ball
   }
   
   for(int i = 0; i< Tiles.size(); i++)
   {
     Tiles.get(i).create();
     Tiles.get(i).CheckHit(i);
-    Tiles.get(i).TileHit(i);
+    Tiles.get(i).Update();
   }
   
 }//end StartGame()
@@ -230,7 +205,7 @@ void Level1()
       }//end else if
     }//end for
   }//end for
-    SetTiles = true;
+   SetTiles = true;
   }
 }
 void Level2(){}

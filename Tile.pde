@@ -12,10 +12,15 @@ class Tile
   
   void create()
   {
-    noStroke();
-    fill(TileColour);
-    rect(Xpos, Ypos, TileWidth, TileHeight);
+    if(Lives > 0)
+    {
+      noStroke();
+      fill(TileColour);
+      rect(Xpos, Ypos, TileWidth, TileHeight);
+    }
   }
+  
+  void Update(){}
   
   void CheckHit(int i)
   {
@@ -31,7 +36,8 @@ class Tile
         && Tiles.get(i).Hit == false )
     {
       BounceBall.YSpeed *= -1;
-      Tiles.get(i).Hit = true;
+      //Tiles.get(i).Hit = true;
+      Tiles.get(i).TileHit(i);
     }
     
     //Check if the ball has hit the top of the tile  
@@ -46,7 +52,8 @@ class Tile
         && Tiles.get(i).Hit == false)
     {
       BounceBall.YSpeed *= -1;
-      Tiles.get(i).Hit = true;
+     //Tiles.get(i).Hit = true;
+      Tiles.get(i).TileHit(i);
     }
     
    //Check if the ball has hit the right side of the tile  
@@ -57,7 +64,8 @@ class Tile
        && Tiles.get(i).Hit == false)
    {
       BounceBall.XSpeed *= 1;
-      Tiles.get(i).Hit = true;
+      //Tiles.get(i).Hit = true;
+      Tiles.get(i).TileHit(i);
    }
    
     //Check if the ball has hit the left side of the tile      
@@ -68,22 +76,16 @@ class Tile
         && Tiles.get(i).Hit == false)
     {
       BounceBall.XSpeed *= -1;
-      Tiles.get(i).Hit = true;
+      //Tiles.get(i).Hit = true;
+      Tiles.get(i).TileHit(i);
     }
    
   }
   
   void TileHit(int i)
   {
-    if(Tiles.get(i).Hit == true)
-    {
-      Lives --;
-    }
-    
-    if(Tiles.get(i).Lives == 0)
-    {
-      Tiles.remove(i);
-    }
+    Tiles.get(i).Lives = Tiles.get(i).Lives - 1;
+    println(Lives);
   }
   
 }

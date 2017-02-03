@@ -47,7 +47,7 @@ class Ball
       //Hits the far left hand side of the Paddle
       if(Xpos > (PlayerXPos - PlayerWidth) && Xpos < (PlayerXPos-(1./3)*PlayerWidth) && XSpeed > 0 && YSpeed > 0)
       {
-        XSpeed = -4;
+        XSpeed = 4;
         YSpeed *= -1;
       }
       

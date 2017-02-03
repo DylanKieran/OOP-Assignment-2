@@ -11,5 +11,13 @@ class TileEasy extends Tile
     this.Lives = 1;
     this.Hit = false;
   }
+  
+  void Update()
+  {
+    if(Lives <= 0)
+    {
+      Tiles.remove(this);   
+    }
+  }
  
 }
