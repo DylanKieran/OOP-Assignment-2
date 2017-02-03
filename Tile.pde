@@ -25,8 +25,8 @@ class Tile
   void CheckHit(int i)
   {
     //Check if the ball has hit the bottom of the tile
-    //1. if the balls y position - the balls radius is less than or equal the tiles Y position + tiles height
-    //2. if the balls X position is greater - the readius is less than or equal to the Y position of the tile
+    //1. if the balls y position - the radius is less than or equal the tiles Y position + tiles height
+    //2. if the balls y position - the radius is greater than or equal to the Y position of the tile
     //3. if the balls X position is greater than or equal to the Tiles X position
     //4. if the balls X position is less than or equal to the tiles X position plus its width
     if(BounceBall.Ypos - 5/2 <= Tiles.get(i).Ypos + Tiles.get(i).TileHeight 
@@ -85,7 +85,6 @@ class Tile
   void TileHit(int i)
   {
     Tiles.get(i).Lives = Tiles.get(i).Lives - 1;
-    println(Lives);
   }
   
 }

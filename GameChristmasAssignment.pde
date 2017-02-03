@@ -15,7 +15,7 @@ int Xpos;
 int Ypos;
 
 //Declare Ball Class
-Ball BounceBall = new Ball(250, 350, 4, -4);
+Ball BounceBall = new Ball();
 
 //Array List for Tile
 ArrayList<Tile> Tiles = new ArrayList<Tile>();
@@ -63,6 +63,7 @@ void draw()
       GameOver();
       break;
       
+      
   }//end switch
 }//end draw()
 
@@ -97,14 +98,9 @@ void StartGame()
   background(1,12,18);
   BackgroundCircles();
   
-  Player BouncePlayer = new Player(70, 5, 255, height-80, mouseX); //Player(BarSize, Color, Y, X)
+  Player BouncePlayer = new Player(50, 5, 255, height-80, mouseX); //Player(BarSize, Color, Y, X)
   BouncePlayer.update();
-  
-  if(frameCount > 140)
-  {
-    BounceBall.drawBall();
-    BounceBall.update(70,mouseX,height-80); //Pass Player Co-ordinates to Ball
-  }
+  BounceBall.update(50,mouseX,height-80); //Pass Player Co-ordinates to Ball
   
   for(int i = 0; i< Tiles.size(); i++)
   {

@@ -8,25 +8,21 @@ class Ball
   float PlayerXPos;
   float PlayerYPos;
   
-  Ball(float Xpos, float Ypos, float XSpeed, float YSpeed)
+  Ball()
   {
-    this.Xpos = Xpos;
-    this.Ypos = Ypos;
-    this.XSpeed = XSpeed;
-    this.YSpeed = YSpeed;
-  }
-  
-  void drawBall()
-  {
-    fill(255);
-    ellipse(Xpos, Ypos, 5, 5);
+    this.Xpos = 250;
+    this.Ypos = 350;
+    this.XSpeed = 4;
+    this.YSpeed = -4;
   }
   
   void update(float PlayerWidth, float PlayerXPos, float PlayerYPos)
   {
+    fill(255);
+    ellipse(Xpos, Ypos, 5, 5);
     
-    Xpos = Xpos + XSpeed;
-    Ypos = Ypos + YSpeed;
+    Xpos += XSpeed;
+    Ypos += YSpeed;
     
     if(Xpos > width || Xpos < 0)
     {
@@ -36,6 +32,11 @@ class Ball
     if(Ypos < 0)
     {
       YSpeed = -YSpeed;
+    }
+    
+    if(Ypos > height)
+    {
+      GameState = EndScreen;
     }
     
     //Change direction of the ball when it hits the paddle depending on which direction the ball comes from
@@ -59,14 +60,14 @@ class Ball
       }
       
       //Hits the right hand side of the paddle
-      else if(Xpos >(PlayerXPos + (1./3) * PlayerWidth) && Xpos< (PlayerXPos + PlayerWidth) && XSpeed > 0 && YSpeed > 0)
+      else if(Xpos >(PlayerXPos + PlayerWidth) && Xpos< (PlayerXPos + PlayerWidth) && XSpeed > 0 && YSpeed > 0)
       {
         XSpeed = 4;
         YSpeed *= -1;
       }
       
       //Hit the right side but more center
-      else if (Xpos > (PlayerXPos + (1./3) * PlayerWidth) && Xpos < (PlayerXPos + PlayerWidth) && XSpeed < 0 && YSpeed > 0) 
+      else if (Xpos > (PlayerXPos + PlayerWidth) && Xpos < (PlayerXPos + PlayerWidth) && XSpeed < 0 && YSpeed > 0) 
       {
         XSpeed = -4;
         YSpeed *= -1;
@@ -79,10 +80,5 @@ class Ball
         YSpeed *= -1;
       }
     }
-    if(Ypos > height)
-    {
-      GameState = EndScreen;
-    }
-    
   }
 }
