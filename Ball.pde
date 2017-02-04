@@ -36,7 +36,8 @@ class Ball
     
     if(Ypos > height)
     {
-      GameState = EndScreen;
+      PlayerLives--;
+      Reset();
     }
     
     //Change direction of the ball when it hits the paddle depending on which direction the ball comes from

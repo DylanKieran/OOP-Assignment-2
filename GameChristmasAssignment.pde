@@ -60,6 +60,7 @@ void draw()
       {
         InitialiseTiles();
       }
+      Life();
       break;
       
     case EndScreen:
@@ -91,6 +92,7 @@ void InitialiseRound()
       NextRound = true;
       SetTiles = false;
       i = 0;
+      BounceBall.Reset();
     }
   }
   
@@ -182,6 +184,21 @@ void CreateHardTile(int row, int col)
   Tiles.add(temp);
 }
 
+void Life()
+{
+  if(PlayerLives == 0)
+  {
+    GameState = EndScreen;
+  }
+  
+  if(Round % 3 == 0)
+  {
+    PlayerLives = PlayerLives + 1;
+  }
+  
+  println(PlayerLives);
+}
+
 /* SCREEN DISPLAYS */
 
   void HomeScreenDisplay()
@@ -240,6 +257,7 @@ void CreateHardTile(int row, int col)
     i = 0;
     Round = 1;
     Score = 0;
+    PlayerLives = 3;
     
     BounceBall.Reset();
     
