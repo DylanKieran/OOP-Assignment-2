@@ -17,8 +17,7 @@ class Player
   
   void update()
   {
-    strokeWeight(2);
-    stroke(BarColour);
+    fill(255);
     rect(XPosition-BarWidth, YPosition, BarWidth, BarHeight);
   }
 }

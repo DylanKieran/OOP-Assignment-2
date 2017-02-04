@@ -5,19 +5,27 @@ class Tile
   float Ypos;
   float TileWidth;
   float TileHeight;
-  color TileColour;
+  color Colour;
   int Lives;
   int TileValue;
-  boolean Hit;
   
   void create()
   {
-    if(Lives > 0)
+    stroke(Colour);
+    strokeWeight(0.8);
+    if(Lives == 1)
     {
-      noStroke();
-      fill(TileColour);
-      rect(Xpos, Ypos, TileWidth, TileHeight);
+      fill(Colour, 20);
     }
+    else if(Lives == 2)
+    {
+      fill(Colour, 60);
+    }
+    else if(Lives == 3)
+    {
+      fill(Colour, 120);
+    }
+    rect(Xpos, Ypos, TileWidth, TileHeight);
   }
   
   void Update(){}
@@ -32,11 +40,9 @@ class Tile
     if(BounceBall.Ypos - 5/2 <= Tiles.get(i).Ypos + Tiles.get(i).TileHeight 
         && BounceBall.Ypos - 5/2 >= Tiles.get(i).Ypos 
         && BounceBall.Xpos >= Tiles.get(i).Xpos 
-        && BounceBall.Xpos <= Tiles.get(i).Xpos + Tiles.get(i).TileWidth  
-        && Tiles.get(i).Hit == false )
+        && BounceBall.Xpos <= Tiles.get(i).Xpos + Tiles.get(i).TileWidth)
     {
       BounceBall.YSpeed *= -1;
-      //Tiles.get(i).Hit = true;
       Tiles.get(i).TileHit(i);
     }
     
@@ -48,11 +54,9 @@ class Tile
     if(BounceBall.Ypos + 5/2 >= Tiles.get(i).Ypos 
         && BounceBall.Ypos - 5/2 <= Tiles.get(i).Ypos + Tiles.get(i).TileHeight/2 
         && BounceBall.Xpos >= Tiles.get(i).Xpos 
-        && BounceBall.Xpos <= Tiles.get(i).Xpos + Tiles.get(i).TileWidth
-        && Tiles.get(i).Hit == false)
+        && BounceBall.Xpos <= Tiles.get(i).Xpos + Tiles.get(i).TileWidth)
     {
       BounceBall.YSpeed *= -1;
-     //Tiles.get(i).Hit = true;
       Tiles.get(i).TileHit(i);
     }
     
@@ -60,11 +64,9 @@ class Tile
    if(BounceBall.Xpos - 5/2 <= Tiles.get(i).Xpos + Tiles.get(i).TileWidth
        && BounceBall.Xpos + 5/2 >= Tiles.get(i).Xpos + Tiles.get(i).TileWidth/ 2 
        && BounceBall.Ypos >= Tiles.get(i).Ypos
-       && BounceBall.Ypos <= Tiles.get(i).Ypos + Tiles.get(i).TileHeight  
-       && Tiles.get(i).Hit == false)
+       && BounceBall.Ypos <= Tiles.get(i).Ypos + Tiles.get(i).TileHeight)
    {
       BounceBall.XSpeed *= 1;
-      //Tiles.get(i).Hit = true;
       Tiles.get(i).TileHit(i);
    }
    
@@ -72,11 +74,9 @@ class Tile
     if(BounceBall.Xpos + 5/2 >= Tiles.get(i).Xpos 
         && BounceBall.Xpos + 5/2 <= Tiles.get(i).Xpos + Tiles.get(i).TileWidth / 2 
         && BounceBall.Ypos >= Tiles.get(i).Ypos 
-        && BounceBall.Ypos <= Tiles.get(i).Ypos + Tiles.get(i).TileHeight 
-        && Tiles.get(i).Hit == false)
+        && BounceBall.Ypos <= Tiles.get(i).Ypos + Tiles.get(i).TileHeight)
     {
       BounceBall.XSpeed *= -1;
-      //Tiles.get(i).Hit = true;
       Tiles.get(i).TileHit(i);
     }
    

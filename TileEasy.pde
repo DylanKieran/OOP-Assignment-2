@@ -7,9 +7,8 @@ class TileEasy extends Tile
     this.Ypos = Ypos;
     this.TileWidth = 50;
     this.TileHeight = 25;
-    this.TileColour = color(255,0,0);
+    this.Colour = color(#FF03AB);
     this.Lives = 1;
-    this.Hit = false;
   }
   
   void Update()

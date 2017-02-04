@@ -19,7 +19,7 @@ class Ball
   void update(float PlayerWidth, float PlayerXPos, float PlayerYPos)
   {
     fill(255);
-    ellipse(Xpos, Ypos, 5, 5);
+    ellipse(Xpos, Ypos, 6, 6);
     
     Xpos += XSpeed;
     Ypos += YSpeed;

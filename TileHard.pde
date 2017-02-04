@@ -7,9 +7,8 @@ class TileHard extends Tile
     this.Ypos = Ypos;
     this.TileWidth = 50;
     this.TileHeight = 25;
-    this.TileColour = color(0,0,255);
+    this.Colour = color(#22FF0F);
     this.Lives = 3;
-    this.Hit = false;
   }
   
  void Update()

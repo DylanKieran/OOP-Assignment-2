@@ -7,9 +7,8 @@ class TileNormal extends Tile
     this.Ypos = Ypos;
     this.TileWidth = 50;
     this.TileHeight = 25;
-    this.TileColour = color(0,255,0);
+    this.Colour = color(#03FFEC);
     this.Lives = 2;
-    this.Hit = false;
   }
   
   void Update()
