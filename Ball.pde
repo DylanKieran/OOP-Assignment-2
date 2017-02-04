@@ -80,5 +80,13 @@ class Ball
         YSpeed *= -1;
       }
     }
+  }//End Update()
+  
+  void Reset()
+  {
+    Xpos = 250;
+    Ypos = 350;
+    XSpeed = 5;
+    YSpeed = -5;
   }
 }

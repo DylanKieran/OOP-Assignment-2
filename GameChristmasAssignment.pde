@@ -22,6 +22,8 @@ ArrayList<Tile> Tiles = new ArrayList<Tile>();
 
 boolean SetTiles = false;
 
+int i = 0;
+
 //Variables for Creating different Tiles
 Tile temp;
 int RandomTile;
@@ -64,7 +66,6 @@ void draw()
       GameOver();
       break;
       
-      
   }//end switch
 }//end draw()
 
@@ -77,7 +78,7 @@ void InitialiseRound()
   BouncePlayer.update();
   BounceBall.update(80,mouseX,height-80); //Pass Player Co-ordinates to Ball
   
-  for(int i = 0; i< Tiles.size(); i++)
+  for(i = 0; i< Tiles.size(); i++)
   {
     Tiles.get(i).create();
     Tiles.get(i).CheckHit(i);
@@ -91,8 +92,6 @@ void InitialiseRound()
       SetTiles = false;
       i = 0;
     }
-    
-    println(Score);
   }
   
 }//end InitialiseRound()
@@ -220,7 +219,36 @@ void CreateHardTile(int row, int col)
     textFont(Bounce, 52);
     text("Game Over", width/4 - 45, height/5);
     
-  }//end GameOver()
+    ResetGame();
+    
+  }//End GameOver()
+  
+  void ResetGame()
+  {
+    //Reset Button
+    Button Reset = new Button("Reset", width/2 - 70, height/2 - 7,width/2 - 70,height/2 - 36,130, 34,color(1,12,18), false, EndScreen, GameScreen);
+    
+    //Initialise Button Start Screen
+    Reset.update();
+    Reset.fillRect();
+    Reset.overRect(mouseX,mouseY,width/2 - 8, 34);
+    
+    Reset.mouseclick();
+    
+    NextRound = true;
+    SetTiles = false;
+    i = 0;
+    Round = 1;
+    Score = 0;
+    
+    BounceBall.Reset();
+    
+    for(int j = 0; j<Tiles.size(); j++)
+    {
+      Tiles.remove(j);
+    }
+    
+  }
   
   void BackgroundCircles()
   {
