@@ -102,8 +102,12 @@ void InitialiseRound()
   
 }//end StartGame()
 
+/*TILE CREATION*/
+
 void InitialiseTiles()
 {
+  int Chance = 0;
+  int IncreaseDifficulty = 0;
   NextRound = false;
   if(SetTiles == false)
   {
@@ -112,30 +116,76 @@ void InitialiseTiles()
     //Loop through rows
     for(int col=0; col < 5; col++)
     {
-      //Create a different tile (every iteration of the loop) if the RandomTile variable is between a certain number
-      RandomTile = (int)(random(0, 80));
+      //Randomize Tile Spawn
+      if(Round == 1)
+      {
+        Chance = 40;
+      }
+      if(Round == 2)
+      {
+        Chance = 65;
+      }
+      if(Round == 3)
+      {
+        Chance = 75;
+      }
+      if(Round == 3)
+      {
+        Chance = 80;
+      }
+      if(Round == 4)
+      {
+        Chance = 80;
+        IncreaseDifficulty = 35;
+      }
+      if(Round == 5)
+      {
+        Chance = 80;
+        IncreaseDifficulty = 41;
+      }
+      if(Round > 5)
+      {
+        Chance = 80;
+        IncreaseDifficulty = 55;
+      }
       
-      if(RandomTile <= 45)
+      RandomTile = (int)(random(IncreaseDifficulty, Chance));
+      
+      if(RandomTile <= 40)
       {
-        temp = new TileEasy((row+1) *width/(7 + 2), (col+1) * 42);  
-        Tiles.add(temp);
-        
+        CreateEasyTile(row,col); 
       }//end else if
-      else if(RandomTile > 45 && RandomTile <= 70)
+      else if(RandomTile > 40 && RandomTile <= 70)
       {
-        temp = new TileNormal((row+1) *width/(7 + 2), (col+1) * 42);
-        Tiles.add(temp);
-        
+        CreateNormalTile(row,col); 
       }//end else if
       else if(RandomTile > 70 && RandomTile <= 80)
       {
-        temp = new TileHard((row+1) *width/(7 + 2), (col+1) * 42);
-        Tiles.add(temp);
+        CreateHardTile(row,col); 
       }//end else if
+      
     }//end for
   }//end for
    SetTiles = true;
   }
+}
+
+void CreateEasyTile(int row, int col)
+{
+  temp = new TileEasy((row+1) *width/(7 + 2), (col+1) * 42);  
+  Tiles.add(temp);
+}
+
+void CreateNormalTile(int row, int col)
+{
+  temp = new TileNormal((row+1) *width/(7 + 2), (col+1) * 42);
+  Tiles.add(temp);
+}
+
+void CreateHardTile(int row, int col)
+{
+  temp = new TileHard((row+1) *width/(7 + 2), (col+1) * 42);
+  Tiles.add(temp);
 }
 
 /* SCREEN DISPLAYS */
