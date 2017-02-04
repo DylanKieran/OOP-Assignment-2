@@ -20,26 +20,19 @@ Ball BounceBall = new Ball();
 //Array List for Tile
 ArrayList<Tile> Tiles = new ArrayList<Tile>();
 
-//Level Variables
-final int Level1 = 1;
-final int Level2 = 2;
-final int Level3 = 3;
-final int Level4 = 4;
-final int Level5 = 5;
-int LevelState = Level1;
-
 boolean SetTiles = false;
-boolean RemoveTile = false;
 
 //Variables for Creating different Tiles
 Tile temp;
-int i = 0;
-int j = 0;
 int RandomTile;
 
 //Variables for Rounds
 int Round = 1;
 boolean NextRound = true;
+
+//Score and PlayerLives Variables
+int Score = 0;
+int PlayerLives = 3;
 
 void setup()
 {
@@ -93,14 +86,16 @@ void InitialiseRound()
     if(Tiles.size() == 0)
     {
       Round = Round + 1;
+      Score = Score + 100;
       NextRound = true;
       SetTiles = false;
       i = 0;
     }
     
+    println(Score);
   }
   
-}//end StartGame()
+}//end InitialiseRound()
 
 /*TILE CREATION*/
 

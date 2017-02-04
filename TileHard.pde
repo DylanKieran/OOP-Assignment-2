@@ -16,6 +16,7 @@ class TileHard extends Tile
     if(Lives <= 0)
     {
       Tiles.remove(this);   
+      Score = Score + 30;
     }
   }
 }

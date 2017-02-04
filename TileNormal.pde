@@ -15,7 +15,8 @@ class TileNormal extends Tile
   {
     if(Lives <= 0)
     {
-      Tiles.remove(this);   
+      Tiles.remove(this); 
+      Score = Score + 20;
     }
   }
 }

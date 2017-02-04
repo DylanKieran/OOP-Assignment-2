@@ -84,7 +84,7 @@ class Tile
   
   void TileHit(int i)
   {
-    Tiles.get(i).Lives = Tiles.get(i).Lives - 1;
+    Tiles.get(i).Lives = Tiles.get(i).Lives - 1; 
   }
   
 }
