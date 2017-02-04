@@ -37,6 +37,10 @@ int i = 0;
 int j = 0;
 int RandomTile;
 
+//Variables for Rounds
+int Round = 1;
+boolean NextRound = true;
+
 void setup()
 {
   size(500,700);
@@ -56,7 +60,11 @@ void draw()
       break;
     
     case GameScreen:
-      switchLevels();
+      InitialiseRound();
+      if(NextRound == true)
+      {
+        InitialiseTiles();
+      }
       break;
       
     case EndScreen:
@@ -67,34 +75,8 @@ void draw()
   }//end switch
 }//end draw()
 
-void HomeScreenDisplay()
+void InitialiseRound()
 {
-  background(1,12,18);
-  
-  //Bounce Title
-  fill(19, 161, 229);
-  textSize(64);
-  textFont(Bounce);
-  text("Bounce", width/4 - 20, height/5);
-  
-  //Start Button
-  //Initialise Button Call
-  Button initialise = new Button("Start", width/2 - 70, height/2 - 7,width/2 - 70,height/2 - 36,130, 34,color(1,12,18), false, WelcomeScreen, GameScreen);
-          
-  //Initialise Button Start Screen
-  initialise.update();
-  initialise.fillRect();
-  initialise.overRect(mouseX,mouseY,width/2 - 8, 34);
-  initialise.mouseclick();
-  
-  //Background Detail
-  BackgroundCircles();
-  
-}//end HomeScreenDisplay()
-
-void StartGame()
-{
-  
   background(1,12,18);
   BackgroundCircles();
   
@@ -107,71 +89,22 @@ void StartGame()
     Tiles.get(i).create();
     Tiles.get(i).CheckHit(i);
     Tiles.get(i).Update();
+    
+    if(Tiles.size() == 0)
+    {
+      Round = Round + 1;
+      NextRound = true;
+      SetTiles = false;
+      i = 0;
+    }
+    
   }
   
 }//end StartGame()
 
-void GameOver()
+void InitialiseTiles()
 {
-  //Background Detail
-  background(1,12,18);
-  BackgroundCircles();
-  
-  fill(19, 161, 229);
-  textFont(Bounce, 52);
-  text("Game Over", width/4 - 45, height/5);
-  
-}//end GameOver()
-
-void BackgroundCircles()
-{
-  noStroke();
-  fill(19, 161, 229);
-  for(Xpos = 5; Xpos < width; Xpos += 40)
-  {
-    for(Ypos = 5; Ypos < height; Ypos += 40)
-    {
-      ellipse(Xpos, Ypos, 1 , 1);
-      
-    }//end Ypos
-    
-  }//end Xpos
-  
-}//end BackgroundCircles()
-
-void switchLevels()
-{
-  switch(LevelState)
-  {
-    case Level1:
-      StartGame();
-      Level1();
-      break;
-      
-    case Level2:
-      StartGame();
-      Level2();
-      break;
-    
-    case Level3:
-      StartGame();
-      Level3();
-      break;
-      
-    case Level4:
-      StartGame();
-      Level4();
-      break;
-      
-    case Level5:
-      StartGame();
-      Level5();
-      break;
-  }
-}
-
-void Level1()
-{
+  NextRound = false;
   if(SetTiles == false)
   {
    for(int row=0; row < 7; row++)
@@ -204,7 +137,56 @@ void Level1()
    SetTiles = true;
   }
 }
-void Level2(){}
-void Level3(){}
-void Level4(){}
-void Level5(){}
+
+/* SCREEN DISPLAYS */
+
+  void HomeScreenDisplay()
+  {
+    
+    background(1,12,18);
+    //Bounce Title
+    fill(19, 161, 229);
+    textSize(64);
+    textFont(Bounce);
+    text("Bounce", width/4 - 20, height/5);
+    
+    //Start Button
+    //Initialise Button Call
+    Button initialise = new Button("Start", width/2 - 70, height/2 - 7,width/2 - 70,height/2 - 36,130, 34,color(1,12,18), false, WelcomeScreen, GameScreen);
+            
+    //Initialise Button Start Screen
+    initialise.update();
+    initialise.fillRect();
+    initialise.overRect(mouseX,mouseY,width/2 - 8, 34);
+    initialise.mouseclick();
+    
+    //Background Detail
+    BackgroundCircles();
+    
+  }//end HomeScreenDisplay()
+  
+  void GameOver()
+  {
+    //Background Detail
+    background(1,12,18);
+    BackgroundCircles();
+    
+    fill(19, 161, 229);
+    textFont(Bounce, 52);
+    text("Game Over", width/4 - 45, height/5);
+    
+  }//end GameOver()
+  
+  void BackgroundCircles()
+  {
+    noStroke();
+    fill(19, 161, 229);
+    for(Xpos = 5; Xpos < width; Xpos += 40)
+    {
+      for(Ypos = 5; Ypos < height; Ypos += 40)
+      {
+        ellipse(Xpos, Ypos, 1 , 1); 
+      }//end Ypos
+    }//end Xpos
+  }//end BackgroundCircles()
+    

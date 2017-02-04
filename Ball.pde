@@ -55,7 +55,7 @@ class Ball
       //Hits the left but more center
       else if(Xpos > (PlayerXPos - PlayerWidth) && Xpos < (PlayerXPos-(1./3)*PlayerWidth) && XSpeed < 0 && YSpeed > 0)
       {
-        XSpeed  = -5;
+        XSpeed  = -4;
         YSpeed *= -1;
       }
       
@@ -69,7 +69,7 @@ class Ball
       //Hit the right side but more center
       else if (Xpos > (PlayerXPos + PlayerWidth) && Xpos < (PlayerXPos + PlayerWidth) && XSpeed < 0 && YSpeed > 0) 
       {
-        XSpeed  =  5;
+        XSpeed  =  4;
         YSpeed *= -1;
       }
       
