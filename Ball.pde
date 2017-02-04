@@ -12,8 +12,8 @@ class Ball
   {
     this.Xpos = 250;
     this.Ypos = 350;
-    this.XSpeed = 5;
-    this.YSpeed = -5;
+    this.XSpeed = 0.5;
+    this.YSpeed = 5;
   }
   
   void update(float PlayerWidth, float PlayerXPos, float PlayerYPos)
@@ -87,7 +87,7 @@ class Ball
   {
     Xpos = 250;
     Ypos = 350;
-    XSpeed = 5;
-    YSpeed = -5;
+    XSpeed = 0.5;
+    YSpeed = 5;
   }
 }

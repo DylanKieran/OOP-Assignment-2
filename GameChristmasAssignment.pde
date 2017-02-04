@@ -195,8 +195,6 @@ void Life()
   {
     PlayerLives = PlayerLives + 1;
   }
-  
-  println(PlayerLives);
 }
 
 /* SCREEN DISPLAYS */
