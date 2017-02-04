@@ -98,9 +98,9 @@ void StartGame()
   background(1,12,18);
   BackgroundCircles();
   
-  Player BouncePlayer = new Player(50, 5, 255, height-80, mouseX); //Player(BarSize, Color, Y, X)
+  Player BouncePlayer = new Player(80, 5, 255, height-80, mouseX); //Player(BarSize, Color, Y, X)
   BouncePlayer.update();
-  BounceBall.update(50,mouseX,height-80); //Pass Player Co-ordinates to Ball
+  BounceBall.update(80,mouseX,height-80); //Pass Player Co-ordinates to Ball
   
   for(int i = 0; i< Tiles.size(); i++)
   {
@@ -184,19 +184,19 @@ void Level1()
       
       if(RandomTile <= 45)
       {
-        temp = new TileEasy((row+1) *width/(7 + 2), (col+1) * 50);  
+        temp = new TileEasy((row+1) *width/(7 + 2), (col+1) * 42);  
         Tiles.add(temp);
         
       }//end else if
       else if(RandomTile > 45 && RandomTile <= 70)
       {
-        temp = new TileNormal((row+1) *width/(7 + 2), (col+1) * 50);
+        temp = new TileNormal((row+1) *width/(7 + 2), (col+1) * 42);
         Tiles.add(temp);
         
       }//end else if
       else if(RandomTile > 70 && RandomTile <= 80)
       {
-        temp = new TileHard((row+1) *width/(7 + 2), (col+1) * 50);
+        temp = new TileHard((row+1) *width/(7 + 2), (col+1) * 42);
         Tiles.add(temp);
       }//end else if
     }//end for

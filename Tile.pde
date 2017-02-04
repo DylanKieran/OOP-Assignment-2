@@ -62,17 +62,17 @@ class Tile
     
    //Check if the ball has hit the right side of the tile  
    if(BounceBall.Xpos - 5/2 <= Tiles.get(i).Xpos + Tiles.get(i).TileWidth
-       && BounceBall.Xpos + 5/2 >= Tiles.get(i).Xpos + Tiles.get(i).TileWidth/ 2 
+       && BounceBall.Xpos + 5/2 >= Tiles.get(i).Xpos + Tiles.get(i).TileWidth/ 2 - 10
        && BounceBall.Ypos >= Tiles.get(i).Ypos
        && BounceBall.Ypos <= Tiles.get(i).Ypos + Tiles.get(i).TileHeight)
    {
-      BounceBall.XSpeed *= 1;
+      BounceBall.XSpeed *= -1;
       Tiles.get(i).TileHit(i);
    }
    
     //Check if the ball has hit the left side of the tile      
     if(BounceBall.Xpos + 5/2 >= Tiles.get(i).Xpos 
-        && BounceBall.Xpos + 5/2 <= Tiles.get(i).Xpos + Tiles.get(i).TileWidth / 2 
+        && BounceBall.Xpos + 5/2 <= Tiles.get(i).Xpos + Tiles.get(i).TileWidth / 2 - 10
         && BounceBall.Ypos >= Tiles.get(i).Ypos 
         && BounceBall.Ypos <= Tiles.get(i).Ypos + Tiles.get(i).TileHeight)
     {
