@@ -190,11 +190,6 @@ void Life()
   {
     GameState = EndScreen;
   }
-  
-  if(Round % 3 == 0)
-  {
-    PlayerLives = PlayerLives + 1;
-  }
 }
 
 /* SCREEN DISPLAYS */
