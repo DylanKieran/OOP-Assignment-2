@@ -80,6 +80,21 @@ class Tile
       Tiles.get(i).TileHit(i);
     }
     
+    //Check if the enemy hits the top of the tile
+    if(Bomber.Ypos >= Tiles.get(i).Ypos 
+        && Bomber.Ypos <= Tiles.get(i).Ypos + Tiles.get(i).TileHeight/2 
+        && Bomber.Xpos >= Tiles.get(i).Xpos  
+        && Bomber.Xpos <= Tiles.get(i).Xpos + Tiles.get(i).TileWidth)
+    {
+      Tiles.get(i).TileHit(i);
+      Bomber.Ypos = 7000;
+      
+      if (Bomber.Ypos > Bomber.maxDist)
+      {
+        Bomber.Respawn();
+      }//end if 
+    }//end if
+    
   }//End CheckHit()
   
   void TileHit(int i)
