@@ -76,11 +76,12 @@ void InitialiseRound()
   background(1,12,18);
   BackgroundCircles();
   
-  Player BouncePlayer = new Player(80, 5, 255, height-80, mouseX); //Player(BarSize, Color, Y, X)
+  Player BouncePlayer = new Player(80,5,255,mouseX,height-80);
   BouncePlayer.update();
   BounceBall.update(80,mouseX,height-80); //Pass Player Co-ordinates to Ball
   
   Bomber.Update();
+  println(PlayerLives);
   
   if (Bomber.Ypos > Bomber.maxDist)
   {
