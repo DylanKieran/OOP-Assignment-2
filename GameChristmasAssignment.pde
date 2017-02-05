@@ -16,6 +16,7 @@ int Ypos;
 
 //Declare Ball Class
 Ball BounceBall = new Ball();
+Enemy Bomber = new Enemy();
 
 //Array List for Tile
 ArrayList<Tile> Tiles = new ArrayList<Tile>();
@@ -78,6 +79,13 @@ void InitialiseRound()
   Player BouncePlayer = new Player(80, 5, 255, height-80, mouseX); //Player(BarSize, Color, Y, X)
   BouncePlayer.update();
   BounceBall.update(80,mouseX,height-80); //Pass Player Co-ordinates to Ball
+  
+  Bomber.Update();
+  
+  if (Bomber.Ypos > Bomber.maxDist)
+  {
+    Bomber.Respawn();
+  }
   
   for(i = 0; i< Tiles.size(); i++)
   {
