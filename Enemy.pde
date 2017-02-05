@@ -16,7 +16,7 @@ class Enemy
     maxDist = 9000; //Spawn Rate When Ypos Reaches max dist the enemy respawns
   }
   
-  void Update()
+  void Create()
   {
     //Draw Enemy
     stroke(#FF8D00);
@@ -33,7 +33,11 @@ class Enemy
     vertex(Xpos + 5, Ypos - 10);
     vertex(Xpos + 8, Ypos - 10);
     endShape(CLOSE);
-
+  }
+  
+  void Update()
+  {
+    Create();
     Ypos += YSpeed; //Change Y position to go down
     YSpeed += Gravity; //Increase Speed Over time
   }
@@ -43,22 +47,8 @@ class Enemy
     Xpos = random(10, width-10); 
     Ypos = 0;
     YSpeed = 2;
-
-    //Draw Enemy
-    stroke(#FF8D00);
-    strokeWeight(0.8);
-    fill(#FF8D00, 60);
     
-    beginShape();
-    vertex(Xpos, Ypos + 2);
-    vertex(Xpos - 8, Ypos - 10);
-    vertex(Xpos - 5, Ypos - 10);
-    vertex(Xpos - 5, Ypos - 50);
-    vertex(Xpos, Ypos - 60);
-    vertex(Xpos + 5, Ypos - 50);
-    vertex(Xpos + 5, Ypos - 10);
-    vertex(Xpos + 8, Ypos - 10);
-    endShape(CLOSE);
+    Create();
   }
   
 }
