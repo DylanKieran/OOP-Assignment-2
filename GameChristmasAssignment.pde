@@ -105,6 +105,8 @@ void InitialiseRound()
   BouncePlayer.update();
   BounceBall.update(80,mouseX,height-80); //Pass Player Co-ordinates to Ball
   
+  BouncePlayer.PlayerCollision();
+  
   Bomber.Update();
   println(PlayerLives);
   

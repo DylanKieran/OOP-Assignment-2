@@ -20,4 +20,17 @@ class Player
     fill(BarColour);
     rect(XPosition-BarWidth, YPosition, BarWidth, BarHeight);
   }
+  
+  void PlayerCollision()
+  {
+     if (dist(Bomber.Xpos,Bomber.Ypos,XPosition,YPosition) < 50)
+        {
+          PlayerLives --;
+          Bomber.Ypos = 7000;
+          if (Bomber.Ypos > Bomber.maxDist)
+          {
+              Bomber.Respawn();
+          }//end if 
+        }
+  }
 }

@@ -40,19 +40,6 @@ class Enemy
     Create();
     Ypos += YSpeed; //Change Y position to go down
     YSpeed += Gravity; //Increase Speed Over time
-    
-/*if (Xpos >= BouncePlayer.XPosition 
-        && Xpos <= BouncePlayer.XPosition + BouncePlayer.BarWidth
-        && Ypos >= BouncePlayer.YPosition
-        && Ypos <= BouncePlayer.YPosition + 5)
-        {
-          PlayerLives --;
-          Bomber.Ypos = 7000;
-          if (Bomber.Ypos > Bomber.maxDist)
-          {
-              Bomber.Respawn();
-          }//end if 
-        }*/
   }
   
   void Respawn()
