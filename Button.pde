@@ -31,18 +31,8 @@ class Button
   
   void fillRect()
   {
-    //color rectHighlight  = color(#1B2EF0);
     color textColour = color(19, 161, 229, 50);
     color textHighlight = color(19, 161, 229);
-    
-    //Needed if wanting to change a buttons colour
-    /*if (rectOver) 
-    {
-      fill(rectHighlight);
-    } else 
-    {
-      fill(rectColour);
-    }*/
     
     fill(rectColour);
     noStroke();
@@ -56,7 +46,7 @@ class Button
       fill(textColour);
     }
     
-    textFont(font);
+    textFont(Bounce);
     textSize(32);
     textAlign(CENTER);
     text(buttonText,textX,textY);
