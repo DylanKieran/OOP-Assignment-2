@@ -6,22 +6,29 @@ class Player
   float YPosition;
   float XPosition;
   
-  Player(int BarWidth,int BarHeight,color BarColour,float XPosition,float YPosition)
+  Player(int BarWidth,int BarHeight,float XPosition,float YPosition)
   {
     this.BarWidth = BarWidth;
     this.BarHeight = BarHeight;
-    this.BarColour = BarColour;
+    this.BarColour = 255;
     this.XPosition = XPosition;
     this.YPosition = YPosition;
   }
   
   void update()
   {
-    fill(BarColour);
+    if(PlayerCollision())
+    {
+      fill(255,0,0);
+    }
+    else
+    {
+      fill(BarColour);
+    }
     rect(XPosition-BarWidth, YPosition, BarWidth, BarHeight);
   }
   
-  void PlayerCollision()
+  boolean PlayerCollision()
   {
      if (dist(Bomber.Xpos,Bomber.Ypos,XPosition,YPosition) < 50)
         {
@@ -30,7 +37,13 @@ class Player
           if (Bomber.Ypos > Bomber.maxDist)
           {
               Bomber.Respawn();
+              BarColour = 255;
           }//end if 
+          return true;
+        }
+        else
+        {
+          return false;
         }
   }
 }

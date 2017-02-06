@@ -88,27 +88,30 @@ void InitialiseRound()
   stroke(19, 161, 229);
   line(40,height-60,width-40,height-60);
   
-  textFont(Bounce,26);
-  //stroke();
-  text(Score, width/2, height-30);
-  textAlign(CENTER);
+  textFont(Bounce,16);
+  text("Score", width/2 - 16, height-40);
+  textFont(Bounce,24);
+  fill(#B7048D);
+  text(Score, width/2- 8, height-10);
   
-  textFont(Bounce,22);
-  text(Round, width - 80, height-30);
+  fill(19, 161, 229);
+  textFont(Bounce,16);
+  text("Round", width - 80, height-35);
+  text(Round, width - 60, height-18);
   textAlign(RIGHT);
   
-  text(PlayerLives, 80, height-30);
+  textFont(Bounce,16);
+  text("Lives", 80, height-35);
+  text(PlayerLives, 60, height-18);
   textAlign(LEFT);
   
-  
-  Player BouncePlayer = new Player(80,5,255,mouseX,height-80);
+  Player BouncePlayer = new Player(80,5,mouseX,height-80);
   BouncePlayer.update();
   BounceBall.update(80,mouseX,height-80); //Pass Player Co-ordinates to Ball
   
   BouncePlayer.PlayerCollision();
   
   Bomber.Update();
-  println(PlayerLives);
   
   if (Bomber.Ypos > Bomber.maxDist)
   {

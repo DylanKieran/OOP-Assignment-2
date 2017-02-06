@@ -10,8 +10,8 @@ class Enemy
   {
     Xpos = random(10, width-10);
     Ypos = 0;
-    YSpeed = 2;
-    Gravity = 0.4;
+    YSpeed = 1;
+    Gravity = 0.3;
 
     maxDist = 9000; //Spawn Rate When Ypos Reaches max dist the enemy respawns
   }
