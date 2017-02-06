@@ -73,17 +73,19 @@ class Button
     }
   }
   
-  void mouseclick()
+  boolean mouseclick()
   {
     if (mouseX >= rectX && mouseX <= rectX+rectWidth && 
         mouseY >= rectY && mouseY <= rectY+rectHeight
         && mousePressed) 
       {
         GameState = NextScreen;
+        return true;
       } 
       else 
       {
         GameState = CurrentScreen;
+        return false;
       }
   }
   

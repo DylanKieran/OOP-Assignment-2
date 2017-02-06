@@ -111,11 +111,14 @@ void InitialiseRound()
   
   BouncePlayer.PlayerCollision();
   
-  Bomber.Update();
-  
-  if (Bomber.Ypos > Bomber.maxDist)
+  if(Round > 2)
   {
-    Bomber.Respawn();
+    Bomber.Update();
+  
+    if (Bomber.Ypos > Bomber.maxDist)
+    {
+      Bomber.Respawn();
+    }
   }
   
   for(i = 0; i< Tiles.size(); i++)
@@ -268,6 +271,14 @@ void Life()
     textFont(Bounce, 52);
     text("Game Over", width/4 - 45, height/5);
     
+    fill(19, 161, 229);
+    textFont(Bounce, 32);
+    text("Your Score", width/2 - 90, height/2 - 100);
+    
+    fill(#B7048D);
+    textFont(Bounce, 32);
+    text(Score, width/2 - 90, height/2 - 80);
+    
     ResetGame();
     
   }//End GameOver()
@@ -288,7 +299,10 @@ void Life()
     SetTiles = false;
     i = 0;
     Round = 1;
-    Score = 0;
+    if(Reset.mouseclick())
+    {
+      Score = 0;
+    }
     PlayerLives = 3;
     
     BounceBall.Reset();

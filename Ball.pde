@@ -11,7 +11,7 @@ class Ball
   Ball()
   {
     this.Xpos = 250;
-    this.Ypos = 350;
+    this.Ypos = 250;
     this.XSpeed = 0.5;
     this.YSpeed = 5;
   }
@@ -86,7 +86,7 @@ class Ball
   void Reset()
   {
     Xpos = 250;
-    Ypos = 350;
+    Ypos = 250;
     XSpeed = 0.5;
     YSpeed = 5;
   }
