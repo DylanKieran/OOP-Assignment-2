@@ -58,6 +58,7 @@ class Button
     
     textFont(font);
     textSize(32);
+    textAlign(CENTER);
     text(buttonText,textX,textY);
   }
   

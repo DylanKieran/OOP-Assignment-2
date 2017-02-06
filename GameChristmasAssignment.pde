@@ -244,11 +244,12 @@ void Life()
     fill(19, 161, 229);
     textSize(64);
     textFont(Bounce);
-    text("Bounce", width/4 - 20, height/5);
+    textAlign(CENTER);
+    text("Bounce", width/2, height/5);
     
     //Start Button
     //Initialise Button Call
-    Button initialise = new Button("Start", width/2 - 70, height/2 - 7,width/2 - 70,height/2 - 36,130, 34,color(1,12,18), false, WelcomeScreen, GameScreen);
+    Button initialise = new Button("Start", width/2, height/2 - 7,width/2 - 70,height/2 - 36,130, 34,color(1,12,18), false, WelcomeScreen, GameScreen);
             
     //Initialise Button Start Screen
     initialise.update();
@@ -269,15 +270,18 @@ void Life()
     
     fill(19, 161, 229);
     textFont(Bounce, 52);
-    text("Game Over", width/4 - 45, height/5);
+    textAlign(CENTER);
+    text("Game Over", width/2 /*- 45*/, height/5);
     
     fill(19, 161, 229);
     textFont(Bounce, 32);
-    text("Your Score", width/2 - 90, height/2 - 100);
+    textAlign(CENTER);
+    text("Your Score", width/2 /*- 115*/, height/2 - 100);
     
     fill(#B7048D);
     textFont(Bounce, 32);
-    text(Score, width/2 - 90, height/2 - 80);
+    textAlign(CENTER);
+    text(Score, width/2 /*- 20*/, height/2 - 60);
     
     ResetGame();
     
@@ -286,7 +290,7 @@ void Life()
   void ResetGame()
   {
     //Reset Button
-    Button Reset = new Button("Reset", width/2 - 70, height/2 - 7,width/2 - 70,height/2 - 36,130, 34,color(1,12,18), false, EndScreen, GameScreen);
+    Button Reset = new Button("Reset", width/2, height/2 - 7,width/2 - 70,height/2 - 36,130, 34,color(1,12,18), false, EndScreen, GameScreen);
     
     //Initialise Button Start Screen
     Reset.update();
