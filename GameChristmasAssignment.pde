@@ -4,7 +4,7 @@
 final int WelcomeScreen = 0; //final means that this value cannot be changed
 final int GameScreen = 1;
 final int EndScreen = 2;
-int GameState = WelcomeScreen;
+int GameState = WelcomeScreen /*WelcomeScreen*/;
 
 //Text Fonts
 PFont Bounce;
@@ -290,7 +290,7 @@ void Life()
   void ResetGame()
   {
     //Reset Button
-    Button Reset = new Button("Reset", width/2, height/2 - 7,width/2 - 70,height/2 - 36,130, 34,color(1,12,18), false, EndScreen, GameScreen);
+    Button Reset = new Button("Reset", width/2, height/2 + 70,width/2 - 70,height/2 + 44,130, 34,color(1,12,18), false, EndScreen, GameScreen);
     
     //Initialise Button Start Screen
     Reset.update();
