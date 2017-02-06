@@ -73,8 +73,24 @@ void draw()
 
 void InitialiseRound()
 {
-  background(1,12,18);
+  /*if(Round > 5)
+  {
+    background(#5A013D);
+  }
+  else
+  {*/
+    background(1,12,18);
+  //}
+  
   BackgroundCircles();
+  
+  //Design Features
+  stroke(19, 161, 229);
+  line(40,height-60,width-40,height-60);
+  textFont(Bounce,22);
+  text(Score, width/2, height-30);
+  textAlign(CENTER);
+  
   
   Player BouncePlayer = new Player(80,5,255,mouseX,height-80);
   BouncePlayer.update();
