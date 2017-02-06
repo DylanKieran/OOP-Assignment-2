@@ -87,9 +87,18 @@ void InitialiseRound()
   //Design Features
   stroke(19, 161, 229);
   line(40,height-60,width-40,height-60);
-  textFont(Bounce,22);
+  
+  textFont(Bounce,26);
+  //stroke();
   text(Score, width/2, height-30);
   textAlign(CENTER);
+  
+  textFont(Bounce,22);
+  text(Round, width - 80, height-30);
+  textAlign(RIGHT);
+  
+  text(PlayerLives, 80, height-30);
+  textAlign(LEFT);
   
   
   Player BouncePlayer = new Player(80,5,255,mouseX,height-80);
