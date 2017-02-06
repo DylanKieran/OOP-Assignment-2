@@ -11,7 +11,7 @@ class TileHard extends Tile
     this.Lives = 3;
   }
   
- void Update()
+  void Update()
   {
     if(Lives <= 0)
     {

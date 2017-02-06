@@ -13,6 +13,8 @@ class Tile
   {
     stroke(Colour);
     strokeWeight(0.8);
+    
+    //Change Opacity of tiles depending on number of lives
     if(Lives == 1)
     {
       fill(Colour, 20);

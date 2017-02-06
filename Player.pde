@@ -22,6 +22,7 @@ class Player
     rect(XPosition-BarWidth, YPosition, BarWidth, BarHeight);
   }
   
+  //Player collsion with Enemy
   void PlayerCollision()
   {
      if (dist(Bomber.Xpos,Bomber.Ypos,XPosition,YPosition) < 50)

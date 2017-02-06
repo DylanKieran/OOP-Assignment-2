@@ -42,6 +42,7 @@ class Enemy
     YSpeed += Gravity; //Increase Speed Over time
   }
   
+  //Reset the Enemy back to beginning
   void Respawn()
   {
     Xpos = random(10, width-10); 
