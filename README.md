@@ -34,3 +34,6 @@ The Start screen I wanted to keep simple. I started by getting a font online tha
 
 ### Rounds
 You start the game with 3 lives at Round 1 with 0 score. There are three types of tiles you encounter
+- Easy Tile ![Alt text](https://github.com/Superdizzy17/OOP-Assignment-2/blob/master/EasyTile.png "Easy Tile")
+- Normal Tile ![Alt text](https://github.com/Superdizzy17/OOP-Assignment-2/blob/master/NormalTileFull.png "Normal Tile Full Health") ![Alt text](https://github.com/Superdizzy17/OOP-Assignment-2/blob/master/NormalTile1.png "Normal Tile - 1 Health")
+- Hard Tile ![Alt text](https://github.com/Superdizzy17/OOP-Assignment-2/blob/master/HardTileFull.png "Hard Tile Full Health") ![Alt text](https://github.com/Superdizzy17/OOP-Assignment-2/blob/master/HardTile2.png "Hard Tile - 1 Health") ![Alt text](https://github.com/Superdizzy17/OOP-Assignment-2/blob/master/HardTile3.png "Hard Tile 1 Health")
