@@ -59,6 +59,6 @@ Once the player runs out of lives the game will be ended and you will be sent to
 
 #Youtube Video
 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/UUP9TlBRwQw&t/0.jpg)](https://www.youtube.com/watch?v=UUP9TlBRwQw&t "Object Orientated Programming - Assignment 2 - Bounce")
+[![IMAGE ALT TEXT HERE](https://github.com/Superdizzy17/OOP-Assignment-2/blob/master/GameImages/StartScreen.png)](https://www.youtube.com/watch?v=UUP9TlBRwQw&t "Object Orientated Programming - Assignment 2 - Bounce")
 
 
