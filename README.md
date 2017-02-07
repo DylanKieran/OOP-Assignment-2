@@ -10,7 +10,7 @@ For my project I wanted to create modern take on the classic game block breaker.
 - Collision of the ball and paddle 
 - Collision of the missile/enemy with the paddle and tiles
 - Tiles that change depending on number of lives they have
-- General Asthetic
+- General Aesthetic
 
 How To Play
 ------
@@ -28,7 +28,7 @@ How To Play
 * The missiles help by destroying tiles for you
 
 ### Start Screen
-The Start screen I wanted to keep simple. I started by getting a font online that I thought would suit the asthetic. For the button I made a class that could be used over for other buttons throughout the game. When you hover over the start button it highlights and when pressed it changes the screen over to the game screen. The background carries on throughout the game its a series of small circles that are created in a double for loop, this just adds a nice detail to the game.
+The Start screen I wanted to keep simple. I started by getting a font online that I thought would suit the aesthetic. For the button I made a class that could be used over for other buttons throughout the game. When you hover over the start button it highlights and when pressed it changes the screen over to the game screen. The background carries on throughout the game its a series of small circles that are created in a double for loop, this just adds a nice detail to the game.
 
 ![Alt text](https://github.com/Superdizzy17/OOP-Assignment-2/blob/master/StartScreen.png "Start Screen")
 
