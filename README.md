@@ -52,5 +52,8 @@ After round two the game gets more difficult and fast pace as a enemy / missile 
 
 ![Alt text](https://github.com/Superdizzy17/OOP-Assignment-2/blob/master/Round5.png "Round 5")
 
+###Game Over
+Once the player runs out of lives the game will be ended and you will be sent to the game over screen. The game over screen displays a similer screen to the start screen however it displays the score the user got in the game that just ended. It also contains a reset button which resets the game and allows you to start a new game.
 
+![Alt text](https://github.com/Superdizzy17/OOP-Assignment-2/blob/master/GameOver.png "Game Over")
 
